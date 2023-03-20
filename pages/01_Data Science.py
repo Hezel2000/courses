@@ -93,7 +93,7 @@ useCourse(dfSearchAll)
 #------ Main Page Sidebar --------#
 #---------------------------------#  
 
-st.sidebar.image('../images/Goethe-Logo.jpg', width=150)
+# st.sidebar.image('../images/Goethe-Logo.jpg', width=150)
 
 st.sidebar.write("Viele Wege führen zum Erfolg.")
 
