@@ -83,7 +83,7 @@ def importCourseDatasheet():
 # =============================================================================
         
 
-pd.read_csv('https://raw.githubusercontent.com/Hezel2000/Data_Science/main/course_material_data_science.csv')
+#pd.read_csv('https://raw.githubusercontent.com/Hezel2000/Data_Science/main/course_material_data_science.csv')
 #dfSearchAll = importCourseDatasheet()
 
 # useCourse(dfSearchAll)
@@ -94,7 +94,7 @@ pd.read_csv('https://raw.githubusercontent.com/Hezel2000/Data_Science/main/cours
 #------ Main Page Sidebar --------#
 #---------------------------------#  
 
-# st.sidebar.image('../images/Goethe-Logo.jpg', width=150)
+st.sidebar.image('../images/Goethe-Logo.jpg', width=150)
 
 st.sidebar.write("Viele Wege führen zum Erfolg.")
 
