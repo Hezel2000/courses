@@ -94,7 +94,7 @@ def importCourseDatasheet():
 #------ Main Page Sidebar --------#
 #---------------------------------#  
 
-st.sidebar.image('../images/Goethe-Logo.jpg', width=150)
+st.sidebar.image('Goethe-Logo.jpg', width=150)
 
 st.sidebar.write("Viele Wege führen zum Erfolg.")
 
