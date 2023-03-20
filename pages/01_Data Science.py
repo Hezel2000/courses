@@ -30,7 +30,7 @@ st.subheader('Wähle Deine Lerneinheit')
 
 @st.cache
 def importCourseDatasheet():
-    dfSearchAll= pd.read_csv('https://raw.githubusercontent.com/Hezel2000/Data_Science/main/course_material.csv')
+    dfSearchAll= pd.read_csv('https://raw.githubusercontent.com/Hezel2000/Data_Science/main/course_material_data_science.csv')
     return dfSearchAll
 
 
@@ -86,7 +86,6 @@ def useCourse(dfSearchAll):
 dfSearchAll = importCourseDatasheet()
 
 useCourse(dfSearchAll)
-    
 
 
     
@@ -94,7 +93,7 @@ useCourse(dfSearchAll)
 #------ Main Page Sidebar --------#
 #---------------------------------#  
 
-st.sidebar.image('https://raw.githubusercontent.com/Hezel2000/Data_Science/main/images/Goethe-Logo.jpg', width=150)
+st.sidebar.image('../images/Goethe-Logo.jpg', width=150)
 
 st.sidebar.write("Viele Wege führen zum Erfolg.")
 
