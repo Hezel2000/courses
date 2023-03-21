@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-
-#-----------------------
 import streamlit as st
 from st_aggrid import AgGrid, GridUpdateMode
 from st_aggrid.grid_options_builder import GridOptionsBuilder
@@ -87,9 +85,7 @@ def useCourse(dfSearchAll):
         
 
 dfSearchAll = importCourseDatasheet()
-
 useCourse(dfSearchAll)
-
 
     
 #---------------------------------#
@@ -97,6 +93,5 @@ useCourse(dfSearchAll)
 #---------------------------------#  
 
 st.sidebar.image('data/Goethe-Logo.jpg', width=150)
-
 st.sidebar.write("Viele Wege führen zum Erfolg.")
 
