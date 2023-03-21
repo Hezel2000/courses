@@ -24,7 +24,7 @@ st.subheader('Willkommen zur Einführung in Data Sciences')
 st.write('*für Mineralogen, Kosmo-/Geochemiker, Petrologen & den ganzen Rest*')
 
 #df_test = pd.read_csv('https://raw.githubusercontent.com/Hezel2000/Data_Science/main/course_material_data_science.csv')
-df_test = pd.read_csv('https://raw.githubusercontent.com/Hezel2000/Data_Science/main/course_material_data_science.csv')
+df_test = pd.read_csv('course_material_data_science.csv')
 st.write(df_test)
 
 #---------------------------------#
