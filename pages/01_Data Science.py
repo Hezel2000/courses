@@ -21,6 +21,8 @@ import pandas as pd
 st.subheader('Willkommen zur Einführung in Data Sciences')
 st.write('*für Mineralogen, Kosmo-/Geochemiker, Petrologen & den ganzen Rest*')
 
+pd.read_csv('https://raw.githubusercontent.com/Hezel2000/Data_Science/main/course_material_data_science.csv')
+
 #---------------------------------#
 #------ Vorlesungen & Übungen ----#
 #---------------------------------#
@@ -83,7 +85,6 @@ def importCourseDatasheet():
 # =============================================================================
         
 
-#pd.read_csv('https://raw.githubusercontent.com/Hezel2000/Data_Science/main/course_material_data_science.csv')
 #dfSearchAll = importCourseDatasheet()
 
 # useCourse(dfSearchAll)
