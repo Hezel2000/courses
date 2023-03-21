@@ -23,8 +23,6 @@ import pandas as pd
 st.subheader('Willkommen zur Einführung in Data Sciences')
 st.write('*für Mineralogen, Kosmo-/Geochemiker, Petrologen & den ganzen Rest*')
 
-# df_test = pd.read_csv('course_material_data_science.csv')
-# st.write(df_test)
 
 #---------------------------------#
 #------ Vorlesungen & Übungen ----#
@@ -98,7 +96,7 @@ useCourse(dfSearchAll)
 #------ Main Page Sidebar --------#
 #---------------------------------#  
 
-#st.sidebar.image('Goethe-Logo.jpg', width=150)
+st.sidebar.image('images/Goethe-Logo.jpg', width=150)
 
 st.sidebar.write("Viele Wege führen zum Erfolg.")
 
