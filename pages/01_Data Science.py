@@ -56,15 +56,15 @@ def useCourse(dfSearchAll):
             st.write('Laufzeit: ' + sel_row[0]['Laufzeit'])
             with st.expander('Jupyter Notebooks', expanded=True):
                 if sel_row[0]['Vorlesung ipynb'] != 'none':
-                    vorlesung = "[Vorlesung](https://raw.githubusercontent.com/Hezel2000/Data_Science/main/jupyter_nb/" + sel_row[0]['Vorlesung ipynb'] + ")"
+                    vorlesung = "[Vorlesung](jupyter_nb/" + sel_row[0]['Vorlesung ipynb'] + ")"
                 else:
                     vorlesung=''
                 if sel_row[0]['Übungen ipynb'] != 'none':
-                    uebungen = "[Übungen](https://raw.githubusercontent.com/Hezel2000/Data_Science/main/jupyter_nb/" + sel_row[0]['Übungen ipynb'] + ")"
+                    uebungen = "[Übungen](jupyter_nb/" + sel_row[0]['Übungen ipynb'] + ")"
                 else:
                     uebungen=''
                 if sel_row[0]['Lösungen ipynb'] != 'none':
-                    loesungen = "[Lösungen](https://raw.githubusercontent.com/Hezel2000/Data_Science/main/jupyter_nb/" + sel_row[0]['Lösungen ipynb'] + ")"
+                    loesungen = "[Lösungen](jupyter_nb/" + sel_row[0]['Lösungen ipynb'] + ")"
                 else:
                     loesungen=''
                 if vorlesung=='' and uebungen=='' and loesungen=='':
@@ -96,7 +96,7 @@ useCourse(dfSearchAll)
 #------ Main Page Sidebar --------#
 #---------------------------------#  
 
-st.sidebar.image('images/Goethe-Logo.jpg', width=150)
+st.sidebar.image('data/Goethe-Logo.jpg', width=150)
 
 st.sidebar.write("Viele Wege führen zum Erfolg.")
 
