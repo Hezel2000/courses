@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+
+#-----------------------
 import streamlit as st
 from st_aggrid import AgGrid, GridUpdateMode
 from st_aggrid.grid_options_builder import GridOptionsBuilder
@@ -21,7 +23,9 @@ import pandas as pd
 st.subheader('Willkommen zur Einführung in Data Sciences')
 st.write('*für Mineralogen, Kosmo-/Geochemiker, Petrologen & den ganzen Rest*')
 
-pd.read_csv('https://raw.githubusercontent.com/Hezel2000/Data_Science/main/course_material_data_science.csv')
+#df_test = pd.read_csv('https://raw.githubusercontent.com/Hezel2000/Data_Science/main/course_material_data_science.csv')
+df_test = pd.read_csv('https://raw.githubusercontent.com/Hezel2000/Data_Science/main/course_material_data_science.csv')
+st.write(df_test)
 
 #---------------------------------#
 #------ Vorlesungen & Übungen ----#
@@ -30,10 +34,10 @@ pd.read_csv('https://raw.githubusercontent.com/Hezel2000/Data_Science/main/cours
 import streamlit as st
 st.subheader('Wähle Deine Lerneinheit')
 
-@st.cache
-def importCourseDatasheet():
-    dfSearchAll= pd.read_csv('https://raw.githubusercontent.com/Hezel2000/Data_Science/main/course_material_data_science.csv')
-    return dfSearchAll
+# @st.cache
+# def importCourseDatasheet():
+#     dfSearchAll= pd.read_csv('https://raw.githubusercontent.com/Hezel2000/Data_Science/main/course_material_data_science.csv')
+#     return dfSearchAll
 
 
 # def useCourse(dfSearchAll):
