@@ -25,8 +25,6 @@ st.write('*für Mineralogen, Kosmo-/Geochemiker, Petrologen & den ganzen Rest*')
 #---------------------------------#
 #------ Vorlesungen & Übungen ----#
 #---------------------------------#
-#def Vorlesungen_Uebungen():
-import streamlit as st
 st.subheader('Wähle Deine Lerneinheit')
 
 @st.cache

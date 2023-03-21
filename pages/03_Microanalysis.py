@@ -27,13 +27,12 @@ st.write('*für Mineralogen, Kosmo-/Geochemiker, Petrologen & den ganzen Rest*')
 #---------------------------------#
 #------ Vorlesungen & Übungen ----#
 #---------------------------------#
-#def Vorlesungen_Uebungen():
-import streamlit as st
+
 st.subheader('Wähle Deine Lerneinheit')
 
 @st.cache
 def importCourseDatasheet():
-    dfSearchAll= pd.read_csv('data/course_material_microanalysis.csv')
+    dfSearchAll= pd.read_csv('data_microanalysis/course_material_microanalysis.csv')
     return dfSearchAll
 
 
@@ -72,6 +71,6 @@ useCourse(dfSearchAll)
 #------ Main Page Sidebar --------#
 #---------------------------------#  
 
-st.sidebar.image('data_cosmochemistry/Goethe-Logo.jpg', width=150)
+st.sidebar.image('data_microanalysis/Goethe-Logo.jpg', width=150)
 st.sidebar.write("Viele Wege führen zum Erfolg.")
 
