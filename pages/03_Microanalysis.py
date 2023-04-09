@@ -48,6 +48,7 @@ def useCourse(dfSearchAll):
 
     if len(sel_row) > 0:    
         st.write(sel_row[0]['youtube - deutsch'])
+        st.write(sel_row[0]['Laufzeit'])
         col1, col2 = st.columns([3, 1])
         with col1:
             st.video(sel_row[0]['youtube - deutsch'])
