@@ -47,7 +47,7 @@ def useCourse(dfSearchAll):
     sel_row = grid_table['selected_rows']
 
     if len(sel_row) > 0:    
-        st.write(sel_row)
+        st.write(sel_row[0]['youtube - deutsch'])
         col1, col2 = st.columns([3, 1])
         with col1:
             st.video(sel_row[0]['youtube - deutsch'])
