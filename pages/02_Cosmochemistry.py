@@ -26,8 +26,6 @@ st.write('*für Mineralogen, Kosmo-/Geochemiker, Petrologen & den ganzen Rest*')
 
 st.subheader('Wähle Deine Lerneinheit')
 
-st_player('https://vimeo.com/541054877')
-
 @st.cache
 def importCourseDatasheet():
     dfSearchAll= pd.read_csv('data_microanalysis/course_material_microanalysis.csv')
@@ -48,7 +46,7 @@ def useCourse(dfSearchAll):
 
         col1, col2 = st.columns([3, 1])
         with col1:
-            if sel_row[0]['vimeo'] == 'vim':
+            if sel_row[0]['vimeo'] != 'vim':
                 st.video(sel_row[0]['youtube - deutsch'])
             else:
                 st_player(sel_row[0]['vimeo'])
