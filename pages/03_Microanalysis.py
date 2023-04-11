@@ -1,6 +1,7 @@
 import streamlit as st
 from st_aggrid import AgGrid, GridUpdateMode
 from st_aggrid.grid_options_builder import GridOptionsBuilder
+from streamlit_player import st_player
 import pandas as pd
 
 # =============================================================================
@@ -45,7 +46,10 @@ def useCourse(dfSearchAll):
 
         col1, col2 = st.columns([3, 1])
         with col1:
-            st.video(sel_row[0]['youtube - deutsch'])
+            if sel_row[0]['youtube - deutsch'] != 'vim':
+                st.video(sel_row[0]['youtube - deutsch'])
+            else:
+                st_player(sel_row[0]['vimeo'])
         with col2:
             st.write('Laufzeit: ' + sel_row[0]['Laufzeit'])
             with st.expander('Schlagworte', expanded=True):
