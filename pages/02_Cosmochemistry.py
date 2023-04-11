@@ -41,6 +41,8 @@ def useCourse(dfSearchAll):
     grid_table = AgGrid(dfSearchAll, gridOptions=gridoptions, update_mode = GridUpdateMode.SELECTION_CHANGED, theme='material')
     sel_row = grid_table['selected_rows']
 
+st.video('https://vimeo.com/548924769')
+
     if len(sel_row) > 0:    
 
         col1, col2 = st.columns([3, 1])
