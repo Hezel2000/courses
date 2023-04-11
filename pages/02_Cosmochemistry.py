@@ -26,7 +26,7 @@ st.write('*für Mineralogen, Kosmo-/Geochemiker, Petrologen & den ganzen Rest*')
 
 st.subheader('Wähle Deine Lerneinheit')
 
-st.st_player('https://vimeo.com/541054877')
+st_player('https://vimeo.com/541054877')
 
 @st.cache
 def importCourseDatasheet():
