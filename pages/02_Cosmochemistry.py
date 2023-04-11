@@ -25,6 +25,8 @@ st.write('*für Mineralogen, Kosmo-/Geochemiker, Petrologen & den ganzen Rest*')
 
 st.subheader('Wähle Deine Lerneinheit')
 
+st.video('https://vimeo.com/548924769')
+
 @st.cache
 def importCourseDatasheet():
     dfSearchAll= pd.read_csv('data_microanalysis/course_material_microanalysis.csv')
@@ -40,8 +42,6 @@ def useCourse(dfSearchAll):
     gridoptions = gd.build()
     grid_table = AgGrid(dfSearchAll, gridOptions=gridoptions, update_mode = GridUpdateMode.SELECTION_CHANGED, theme='material')
     sel_row = grid_table['selected_rows']
-
-st.video('https://vimeo.com/548924769')
 
     if len(sel_row) > 0:    
 
