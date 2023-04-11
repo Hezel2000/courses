@@ -24,8 +24,6 @@ st.write('*für Mineralogen, Kosmo-/Geochemiker, Petrologen & den ganzen Rest*')
 #------ Vorlesungen & Übungen ----#
 #---------------------------------#
 
-st.subheader('Wähle Deine Lerneinheit')
-
 @st.cache
 def importCourseDatasheet():
     dfSearchAll= pd.read_csv('data_cosmochemistry/course_material_microanalysis.csv')
