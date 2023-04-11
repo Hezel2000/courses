@@ -2,3 +2,4 @@ numpy
 pandas
 bokeh == 2.4.1
 streamlit-aggrid==0.2.3-2
+streamlit-player

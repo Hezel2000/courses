@@ -1,6 +1,7 @@
 import streamlit as st
 from st_aggrid import AgGrid, GridUpdateMode
 from st_aggrid.grid_options_builder import GridOptionsBuilder
+from streamlit_player import st_player
 import pandas as pd
 
 # =============================================================================
@@ -25,7 +26,7 @@ st.write('*für Mineralogen, Kosmo-/Geochemiker, Petrologen & den ganzen Rest*')
 
 st.subheader('Wähle Deine Lerneinheit')
 
-st.video('https://vimeo.com/541054877')
+st.st_player('https://vimeo.com/541054877')
 
 @st.cache
 def importCourseDatasheet():
