@@ -62,8 +62,17 @@ def useCourse(dfSearchAll):
         st.write(sel_row[0]['Beschreibung'])
 
 
-dfSearchAll = importCourseDatasheet()
-useCourse(dfSearchAll)
+tab1, tab2, tab3 = st.tabs(['Assignments', 'Videos', 'misc'])
+with tab1:
+    st. write('coming soon')
+
+with tab2:
+    dfSearchAll = importCourseDatasheet()
+    useCourse(dfSearchAll)
+
+with tab3:
+    st.text('coming soon')
+
 
 st.sidebar.image('data_microanalysis/Goethe-Logo.jpg', width=150)
 st.sidebar.write("Viele Wege führen zum Erfolg.")
