@@ -28,7 +28,7 @@ st.subheader('Wähle Deine Lerneinheit')
 
 @st.cache
 def importCourseDatasheet():
-    dfSearchAll= pd.read_csv('data_cosmochemistry/course_material_cosmochemistry.csv')
+    dfSearchAll= pd.read_csv('data_cosmochemistry/course_material_course_material_microanalysis.csv')
     return dfSearchAll
 
 
