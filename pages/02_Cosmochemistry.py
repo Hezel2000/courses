@@ -47,7 +47,7 @@ def useCourse(dfSearchAll):
         col1, col2 = st.columns([3, 1])
         with col1:
             st.write(sel_row[0]['vimeo'])
-            if sel_row[0]['vimeo'] != 'vim':
+            if sel_row[0]['youtube - deutsch'] != 'vim':
                 st.video(sel_row[0]['youtube - deutsch'])
             else:
                 st_player(sel_row[0]['vimeo'])
