@@ -67,7 +67,7 @@ def useCourse(dfSearchAll):
 
 tab1, tab2, tab3 = st.tabs(['Assignments', 'Videos', 'Glossary'])
 with tab1:
-    st. write('coming soon')[]
+    st. write('coming soon')
 
 with tab2:
     dfSearchAll = importCourseDatasheet()
