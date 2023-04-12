@@ -73,8 +73,8 @@ with tab2:
 
 with tab3:
     cosmo_glossary = import_cosmo_glossary()
-    st.selectbox(cosmo_glossary['Term'])
-    st.text(cosmo_glossary)
+    # st.selectbox(cosmo_glossary['Term'])
+    st.text(cosmo_glossary['Term'])
 
 
 st.sidebar.image('data_microanalysis/Goethe-Logo.jpg', width=150)
