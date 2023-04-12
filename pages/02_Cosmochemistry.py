@@ -24,60 +24,29 @@ st.write('*für Mineralogen, Kosmo-/Geochemiker, Petrologen & den ganzen Rest*')
 #------ Vorlesungen & Übungen ----#
 #---------------------------------#
 
-@st.cache
-def importCourseDatasheet():
-    dfSearchAll= pd.read_csv('data_cosmochemistry/course_material_microanalysis.csv')
-    return dfSearchAll
+@st.cache_data
+def import_cosmo_videos():
+    return pd.read_csv('data_cosmochemistry/videos_cosmochemistry.csv')
+st.session_state.cosmo_videos = import_cosmo_videos()
 
-@st.cache
+@st.cache_data
 def import_cosmo_glossary():
     return pd.read_csv('data_cosmochemistry/glossary_cosmochemistry.csv')
 st.session_state.cosmo_glossary = import_cosmo_glossary()
 
 
-def useCourse(dfSearchAll):
-    dfSearchAll = dfSearchAll
-    gd = GridOptionsBuilder.from_dataframe(dfSearchAll)
-    gd.configure_pagination(enabled=True)
-    gd.configure_default_column(editable=True,groupable=True)
-    gd.configure_selection(selection_mode='single', use_checkbox=True)
-    gridoptions = gd.build()
-    grid_table = AgGrid(dfSearchAll, gridOptions=gridoptions, update_mode = GridUpdateMode.SELECTION_CHANGED, theme='material')
-    sel_row = grid_table['selected_rows']
-
-    if len(sel_row) > 0:    
-
-        col1, col2 = st.columns([3, 1])
-        with col1:
-            if sel_row[0]['youtube - deutsch'] != 'vim':
-                st.video(sel_row[0]['youtube - deutsch'])
-            else:
-                st_player(sel_row[0]['vimeo'])
-        with col2:
-            st.write('Laufzeit: ' + sel_row[0]['Laufzeit'])
-            with st.expander('Schlagworte', expanded=True):
-                if sel_row[0]['Schlagworte'] != 'none':
-                    st.write(sel_row[0]['Schlagworte'])
-                else:
-                    st.write('keine vorhannden')
-        
-        #st.subheader('Beschreibung')
-        st.write(sel_row[0]['Beschreibung'])
-
-
-tab1, tab2, tab3 = st.tabs(['Assignments', 'Videos', 'Glossary'])
+tab1, tab2, tab3 = st.tabs(['Videos', 'Assignments', 'Glossary'])
 with tab1:
-    st. write('coming soon')
+    video_sel = st.selectbox('', st.session_state.cosmo_videos['Title'])
+    st.video(st.session_state.cosmo_videos[st.session_state.cosmo_videos['Title']==video_sel]['Youtube Number'].values[0])
 
 with tab2:
-    dfSearchAll = importCourseDatasheet()
-    useCourse(dfSearchAll)
+    st.write('coming soon')
 
 with tab3:
-    gloss_sel = st.selectbox('sel', st.session_state.cosmo_glossary['Term'])
-    st.write(gloss_sel)
-    st.write(st.session_state.cosmo_glossary[st.session_state.cosmo_glossary['Term']==gloss_sel]['Explanation'])
-    st.write(st.session_state.cosmo_glossary[st.session_state.cosmo_glossary['Term']==gloss_sel]['Explanation'][0])
+    gloss_sel = st.selectbox('', st.session_state.cosmo_glossary['Term'])
+    # st.write(st.session_state.cosmo_glossary[st.session_state.cosmo_glossary['Term']==gloss_sel]['Synonym'].values[0])
+    st.write(st.session_state.cosmo_glossary[st.session_state.cosmo_glossary['Term']==gloss_sel]['Explanation'].values[0])
 
 
 st.sidebar.image('data_microanalysis/Goethe-Logo.jpg', width=150)
