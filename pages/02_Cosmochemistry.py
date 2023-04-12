@@ -67,7 +67,7 @@ def useCourse(dfSearchAll):
 
 tab1, tab2, tab3 = st.tabs(['Assignments', 'Videos', 'Glossary'])
 with tab1:
-    st. write('coming soon')
+    st. write('coming soon')[]
 
 with tab2:
     dfSearchAll = importCourseDatasheet()
@@ -76,7 +76,7 @@ with tab2:
 with tab3:
     gloss_sel = st.selectbox('sel', st.session_state.cosmo_glossary['Term'])
     st.write(gloss_sel)
-    st.write(st.session_state.cosmo_glossary[st.session_state.cosmo_glossary['Term']==gloss_sel])
+    st.write(st.session_state.cosmo_glossary[st.session_state.cosmo_glossary['Term']==gloss_sel]['Explanation'])
     st.write(st.session_state.cosmo_glossary[st.session_state.cosmo_glossary['Term']==gloss_sel]['Explanation'][0])
 
 
