@@ -76,7 +76,7 @@ with tab2:
 with tab3:
     gloss_sel = st.selectbox('sel', st.session_state.cosmo_glossary['Term'])
     st.write(gloss_sel)
-    st.write(st.session_state.cosmo_glossary[st.session_state.cosmo_glossary['Term']==gloss_sel]['Explanation'][0])
+    st.write(st.session_state.cosmo_glossary[st.session_state.cosmo_glossary['Term']==gloss_sel]['Explanation'])
     st.write(st.session_state.cosmo_glossary[st.session_state.cosmo_glossary['Term']==gloss_sel]['Explanation'][0])
 
 
