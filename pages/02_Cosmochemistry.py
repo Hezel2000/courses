@@ -29,6 +29,9 @@ def importCourseDatasheet():
     dfSearchAll= pd.read_csv('data_cosmochemistry/course_material_microanalysis.csv')
     return dfSearchAll
 
+@st.cache
+def import_cosmo_glossary():
+    return pd.read_csv('data_cosmochemistry/glossary_cosmochemistry.csv')
 
 def useCourse(dfSearchAll):
     dfSearchAll = dfSearchAll
@@ -60,7 +63,7 @@ def useCourse(dfSearchAll):
         st.write(sel_row[0]['Beschreibung'])
 
 
-tab1, tab2, tab3 = st.tabs(['Assignments', 'Videos', 'misc'])
+tab1, tab2, tab3 = st.tabs(['Assignments', 'Videos', 'Glossary'])
 with tab1:
     st. write('coming soon')
 
@@ -69,7 +72,8 @@ with tab2:
     useCourse(dfSearchAll)
 
 with tab3:
-    st.text('coming soon')
+    cosmo_glossary = import_cosmo_glossary()
+    st.text(cosmo_glossary)
 
 
 st.sidebar.image('data_microanalysis/Goethe-Logo.jpg', width=150)
