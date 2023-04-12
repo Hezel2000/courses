@@ -3,7 +3,7 @@ import pandas as pd
 
 st.subheader('Welcome')
 
-st.write('Über die Sidebar links erhälst Du Zugriff auf derzeit 3 verfügbare online-Kurse (Kosmochemie kommt in den nächsten Tagen).')
+st.write('Über die Sidebar links erhälst Du Zugriff auf derzeit 3 verfügbare online-Kurse, Kosmochemie ist in Deutsch und Englisch verfügbar.')
 
 st.write("Zurück zu [GeoPlatform](http://www.geoplatform.de)")
 
