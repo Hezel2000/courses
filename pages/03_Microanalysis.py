@@ -19,16 +19,6 @@ import pandas as pd
 st.subheader('Willkommen zur Einführung in die Mikroanalytik')
 st.write('*für Mineralogen, Kosmo-/Geochemiker, Petrologen & den ganzen Rest*')
 
-# def import_cosmo_videos():
-#     imp = pd.read_csv('data_cosmochemistry/videos_tmp.csv')
-#     return imp[imp['done'] == 'yes']
-# st.session_state.cosmo_videos = import_cosmo_videos()
-# sel_vim=st.selectbox('',st.session_state.cosmo_videos['Vimeo Number'])
-# sel_vim_ger=st.selectbox('',st.session_state.cosmo_videos['Vimeo Number (german)'])
-# st.write('https://vimeo.com/manage/videos/'+str(int(sel_vim)))
-# st.write('https://vimeo.com/manage/videos/'+str(int(sel_vim_ger)))
-# st.divider()
-
 #---------------------------------#
 #------ Vorlesungen & Übungen ----#
 #---------------------------------#
