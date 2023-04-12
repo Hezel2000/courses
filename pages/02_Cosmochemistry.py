@@ -32,6 +32,8 @@ def importCourseDatasheet():
 @st.cache
 def import_cosmo_glossary():
     return pd.read_csv('data_cosmochemistry/glossary_cosmochemistry.csv')
+st.session_state.cosmo_glossary = import_cosmo_glossary()
+
 
 def useCourse(dfSearchAll):
     dfSearchAll = dfSearchAll
@@ -72,9 +74,8 @@ with tab2:
     useCourse(dfSearchAll)
 
 with tab3:
-    cosmo_glossary = import_cosmo_glossary()
-    gloss_sel = st.selectbox('sel', cosmo_glossary['Term'])
-    st.write(cosmo_glossary[cosmo_glossary['Term']==gloss_sel]['Explanation'][0])
+    gloss_sel = st.selectbox('sel', st.session_state.cosmo_glossary['Term'])
+    st.write(st.session_state.cosmo_glossarycosmo_glossary[st.session_state.cosmo_glossarycosmo_glossary['Term']==gloss_sel]['Explanation'][0])
 
 
 st.sidebar.image('data_microanalysis/Goethe-Logo.jpg', width=150)
