@@ -16,8 +16,9 @@ import pandas as pd
 # =============================================================================
 
     
-st.subheader('Willkommen zur Einführung in die Mikroanalytik')
-st.write('*für Mineralogen, Kosmo-/Geochemiker, Petrologen & den ganzen Rest*')
+st.subheader('Welcome to the Introduction to Cosmochemistry')
+st.subheader('Willkommen zur Einführung in die Kosmochemie')
+# st.write('*für Mineralogen, Kosmo-/Geochemiker, Petrologen & den ganzen Rest*')
 
 
 #---------------------------------#
@@ -26,7 +27,8 @@ st.write('*für Mineralogen, Kosmo-/Geochemiker, Petrologen & den ganzen Rest*')
 
 @st.cache_data
 def import_cosmo_videos():
-    return pd.read_csv('data_cosmochemistry/videos_cosmochemistry.csv')
+    imp = pd.read_csv('data_cosmochemistry/videos_cosmochemistry.csv')
+    return imp[imp['done'] == 'yes']
 st.session_state.cosmo_videos = import_cosmo_videos()
 
 @st.cache_data
@@ -34,11 +36,18 @@ def import_cosmo_glossary():
     return pd.read_csv('data_cosmochemistry/glossary_cosmochemistry.csv')
 st.session_state.cosmo_glossary = import_cosmo_glossary()
 
+cosmo_language = st.radio('Select Language/Sprachwahl', ('english', 'german'), horizontal=True)
 
 tab1, tab2, tab3 = st.tabs(['Videos', 'Assignments', 'Glossary'])
 with tab1:
-    video_sel = st.selectbox('', st.session_state.cosmo_videos['Title'])
-    st.video(st.session_state.cosmo_videos[st.session_state.cosmo_videos['Title']==video_sel]['Youtube Number'].values[0])
+    if cosmo_language == 'english':
+        video_sel = st.selectbox('', st.session_state.cosmo_videos['Title'])
+        st.video(st.session_state.cosmo_videos[st.session_state.cosmo_videos['Title']==video_sel]['Youtube Number'].values[0])
+        st.write(st.session_state.cosmo_videos[st.session_state.cosmo_videos['Title']==video_sel]['Blurb'].values[0])
+    else:
+        video_sel = st.selectbox('', st.session_state.cosmo_videos['Title (german)'])
+        st.video(st.session_state.cosmo_videos[st.session_state.cosmo_videos['Title (german)']==video_sel]['Youtube Number (german)'].values[0])
+        st.write(st.session_state.cosmo_videos[st.session_state.cosmo_videos['Title (german)']==video_sel]['Blurb (german)'].values[0])
 
 with tab2:
     st.write('coming soon')
