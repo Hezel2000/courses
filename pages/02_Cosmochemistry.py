@@ -52,11 +52,19 @@ tab1, tab2, tab3 = st.tabs(['Videos', 'Assignments', 'Glossary'])
 with tab1:
     if cosmo_language == 'english':
         video_sel = st.selectbox('', st.session_state.cosmo_videos['Title'])
-        st.video(st.session_state.cosmo_videos[st.session_state.cosmo_videos['Title']==video_sel]['Youtube Number'].values[0])
+        video_sel_nr = st.session_state.cosmo_videos[st.session_state.cosmo_videos['Title']==video_sel]['Youtube Number'].values[0]
+        if  video_sel_nr != 'vim':
+            st.video(video_sel_nr)
+        else:
+            st_player('https://vimeo.com/' + str(int(st.session_state.cosmo_videos[st.session_state.cosmo_videos['Title']==video_sel]['Vimeo Number'].values[0])))
         st.write(st.session_state.cosmo_videos[st.session_state.cosmo_videos['Title']==video_sel]['Blurb'].values[0])
     else:
         video_sel = st.selectbox('', st.session_state.cosmo_videos['Title (german)'])
-        st.video(st.session_state.cosmo_videos[st.session_state.cosmo_videos['Title (german)']==video_sel]['Youtube Number (german)'].values[0])
+        video_sel_nr = st.session_state.cosmo_videos[st.session_state.cosmo_videos['Title (german)']==video_sel]['Youtube Number (german)'].values[0]
+        if  video_sel_nr != 'vim':
+            st.video(video_sel_nr)
+        else:
+            st_player('https://vimeo.com/' + str(int(st.session_state.cosmo_videos[st.session_state.cosmo_videos['Title (german)']==video_sel]['Vimeo Number (german)'].values[0])))
         st.write(st.session_state.cosmo_videos[st.session_state.cosmo_videos['Title (german)']==video_sel]['Blurb (german)'].values[0])
 
     st.divider()
