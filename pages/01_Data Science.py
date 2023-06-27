@@ -35,7 +35,7 @@ def importCourseDatasheet():
 def useCourse(dfSearchAll):
     dfSearchAll = dfSearchAll
     gd = GridOptionsBuilder.from_dataframe(dfSearchAll)
-    gd.configure_pagination(enabled=True)
+    gd.configure_pagination(enabled=True, paginationPageSize=5)
     gd.configure_default_column(editable=True,groupable=True)
     gd.configure_selection(selection_mode='single', use_checkbox=True)
     gridoptions = gd.build()
