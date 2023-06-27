@@ -25,13 +25,13 @@ st.write('*für Mineralogen, Kosmo-/Geochemiker, Petrologen & den ganzen Rest*')
 #------ Vorlesungen & Übungen ----#
 #---------------------------------#
 st.subheader('Wähle Deine Lerneinheit')
-st.write('test')
 
 @st.cache
 def importCourseDatasheet():
     dfSearchAll= pd.read_csv('course_material_data_science.csv')
     return dfSearchAll
 
+st.write(dfSearchAll)
 
 def useCourse(dfSearchAll):
     dfSearchAll = dfSearchAll
