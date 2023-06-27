@@ -31,7 +31,6 @@ def importCourseDatasheet():
     dfSearchAll= pd.read_csv('course_material_data_science.csv')
     return dfSearchAll
 
-st.write(dfSearchAll)
 
 def useCourse(dfSearchAll):
     dfSearchAll = dfSearchAll
@@ -83,6 +82,7 @@ def useCourse(dfSearchAll):
         
 
 dfSearchAll = importCourseDatasheet()
+st.write(dfSearchAll)
 useCourse(dfSearchAll)
 
     
