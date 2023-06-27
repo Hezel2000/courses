@@ -17,9 +17,7 @@ import pandas as pd
 # st.markdown(hide_st_style, unsafe_allow_html=True)
 # =============================================================================
 
-st.write('test')
-
-st.subheader('Willkommen zur Einführung in Data Sciences')
+st.subheader('Willkommen zur Einführung in Data Sciences & Python')
 st.write('*für Mineralogen, Kosmo-/Geochemiker, Petrologen & den ganzen Rest*')
 
 

@@ -1,11 +1,7 @@
 import streamlit as st
 from st_aggrid import AgGrid, GridUpdateMode
 from st_aggrid.grid_options_builder import GridOptionsBuilder
-import pandas as pd
-
-import streamlit as st
-from st_aggrid import AgGrid, GridUpdateMode
-from st_aggrid.grid_options_builder import GridOptionsBuilder
+from streamlit_player import st_player
 import pandas as pd
 
 # =============================================================================
@@ -23,14 +19,13 @@ import pandas as pd
 st.subheader('Willkommen zur Einführung in die Mikroanalytik')
 st.write('*für Mineralogen, Kosmo-/Geochemiker, Petrologen & den ganzen Rest*')
 
-
 #---------------------------------#
 #------ Vorlesungen & Übungen ----#
 #---------------------------------#
 
 st.subheader('Wähle Deine Lerneinheit')
-#
-@st.cache
+
+@st.cache_data
 def importCourseDatasheet():
     dfSearchAll= pd.read_csv('data_microanalysis/course_material_microanalysis.csv')
     return dfSearchAll
@@ -47,10 +42,13 @@ def useCourse(dfSearchAll):
     sel_row = grid_table['selected_rows']
 
     if len(sel_row) > 0:    
-        
+
         col1, col2 = st.columns([3, 1])
         with col1:
-            st.video(sel_row[0]['youtube - deutsch'])
+            if sel_row[0]['youtube - deutsch'] != 'vim':
+                st.video(sel_row[0]['youtube - deutsch'])
+            else:
+                st_player(sel_row[0]['vimeo'])
         with col2:
             st.write('Laufzeit: ' + sel_row[0]['Laufzeit'])
             with st.expander('Schlagworte', expanded=True):
