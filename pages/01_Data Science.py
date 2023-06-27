@@ -42,7 +42,7 @@ def useCourse(dfSearchAll):
     gridoptions = gd.build()
     grid_table = AgGrid(dfSearchAll, gridOptions=gridoptions, update_mode = GridUpdateMode.SELECTION_CHANGED, theme='material')
     sel_row = grid_table['selected_rows']
-    st.write(sel_row)
+    
     if len(sel_row) > 0:    
         
         col1, col2 = st.columns([3, 1])
