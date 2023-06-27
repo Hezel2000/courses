@@ -82,8 +82,7 @@ def useCourse(dfSearchAll):
         
 
 dfSearchAll = importCourseDatasheet()
-st.write(dfSearchAll)
-useCourse(dfSearchAll)
+st.write(useCourse(dfSearchAll))
 
     
 #---------------------------------#
