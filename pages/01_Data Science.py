@@ -26,7 +26,7 @@ st.write('*für Mineralogen, Kosmo-/Geochemiker, Petrologen & den ganzen Rest*')
 #---------------------------------#
 st.subheader('Wähle Deine Lerneinheit')
 
-#@st.cache_data
+@st.cache_data
 def importCourseDatasheet():
     dfSearchAll= pd.read_csv('course_material_data_science.csv')
     return dfSearchAll
