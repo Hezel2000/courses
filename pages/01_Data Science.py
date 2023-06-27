@@ -35,14 +35,14 @@ def importCourseDatasheet():
 
 def useCourse(dfSearchAll):
     dfSearchAll = dfSearchAll
-    # gd = GridOptionsBuilder.from_dataframe(dfSearchAll)
-    # gd.configure_pagination(enabled=True, paginationPageSize=5)
-    # gd.configure_default_column(editable=True,groupable=True)
-    # gd.configure_selection(selection_mode='single', use_checkbox=True)
-    # gridoptions = gd.build()
-    # grid_table = AgGrid(dfSearchAll, gridOptions=gridoptions, update_mode = GridUpdateMode.SELECTION_CHANGED, theme='material')
+    gd = GridOptionsBuilder.from_dataframe(dfSearchAll)
+    gd.configure_pagination(enabled=True, paginationPageSize=5)
+    gd.configure_default_column(editable=True,groupable=True)
+    gd.configure_selection(selection_mode='single', use_checkbox=True)
+    gridoptions = gd.build()
+    grid_table = AgGrid(dfSearchAll, gridOptions=gridoptions, update_mode = GridUpdateMode.SELECTION_CHANGED, theme='material')
     # sel_row = grid_table['selected_rows']
-    st.write(dfSearchAll)
+    st.write(grid_table)
     # if len(sel_row) > 0:    
         
     #     col1, col2 = st.columns([3, 1])
