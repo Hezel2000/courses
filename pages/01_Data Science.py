@@ -25,6 +25,7 @@ st.write('*für Mineralogen, Kosmo-/Geochemiker, Petrologen & den ganzen Rest*')
 #------ Vorlesungen & Übungen ----#
 #---------------------------------#
 st.subheader('Wähle Deine Lerneinheit')
+st.write('test')
 
 @st.cache_data
 def importCourseDatasheet():
