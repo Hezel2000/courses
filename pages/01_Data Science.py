@@ -16,9 +16,6 @@ import pandas as pd
 # st.markdown(hide_st_style, unsafe_allow_html=True)
 # =============================================================================
 
-st.subheader('Willkommen zur Einführung in Data Sciences & Python')
-st.write('*für Mineralogen, Kosmo-/Geochemiker, Petrologen & den ganzen Rest*')
-
 
 #---------------------------------#
 #------ Vorlesungen & Übungen ----#
@@ -73,27 +70,41 @@ def useCourse(dfSearchAll):
         st.write(sel_row['Beschreibung'])
         
 
+#---------------------------------#
+#------ Main Page ----------------#
+#---------------------------------#  
+        
 dfSearchAll, df_weekly_chapters = importCourseDatasheet()
 
-tab1, tab2, tab3 = st.tabs(['Lerneinheiten', 'Wochenübersicht', 'x'])
+st.subheader('Willkommen zur Einführung in Data Sciences & Python')
+st.write('*für Mineralogen, Kosmo-/Geochemiker, Petrologen & den ganzen Rest*')
 
-with tab1:
+def display_week_content():
     df_weekly_dates = pd.DataFrame()
     df_weekly_dates['pd Datum'] = pd.to_datetime(df_weekly_chapters['Datum'])
     current_date = pd.to_datetime(datetime.now().date())
     # -----------------
     current_date = datetime(day=16, month=5, year=2024)
-    st.write(current_date)
     # -----------------
     current_week_index = df_weekly_dates.index[(df_weekly_dates['pd Datum'] >= current_date)]
-    current_week_info = df_weekly_chapters.iloc[current_week_index.tolist()[0]]
-    
-    with st.expander(f'Woche: {str(current_week_info["Woche"])} –   Thema: {str(current_week_info["Thema"])}'):
-        st.write('Erklärungen')
+    # current_week_info = df_weekly_chapters.iloc[current_week_index.tolist()[0]]
 
-    x=1
-    if x==1:
-        useCourse(dfSearchAll)
+    col1, col2 = st.columns([20,80])
+    with col1:
+        st.write('Überblick Woche:')
+        week_nr = st.selectbox('', range(1,10), index=current_week_index.tolist()[0], label_visibility='collapsed')
+        current_week_info = df_weekly_chapters.iloc[week_nr-1]
+    with col2:
+        st.write(f'Heute ist der: {current_date.strftime("%d.%m.%Y")}')
+        with st.expander(f'bis zum: {str(current_week_info["Datum"])} –   {str(current_week_info["Thema"])}'):
+            st.write('Erklärungen')
+
+display_week_content()
+
+tab1, tab2, tab3 = st.tabs(['Lerneinheiten', 'Wochenübersicht', 'x'])
+
+with tab1:
+    useCourse(dfSearchAll)
 
 with tab2:
     st.dataframe(df_weekly_chapters, width=800, hide_index=True)
