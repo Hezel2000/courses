@@ -70,15 +70,6 @@ def useCourse(dfSearchAll):
         st.write(sel_row['Beschreibung'])
         
 
-#---------------------------------#
-#------ Main Page ----------------#
-#---------------------------------#  
-        
-dfSearchAll, df_weekly_chapters = importCourseDatasheet()
-
-st.subheader('Willkommen zur Einführung in Data Sciences & Python')
-st.write('*für Mineralogen, Kosmo-/Geochemiker, Petrologen & den ganzen Rest*')
-
 def display_week_content():
     df_weekly_dates = pd.DataFrame()
     df_weekly_dates['pd Datum'] = pd.to_datetime(df_weekly_chapters['Datum'])
@@ -99,7 +90,19 @@ def display_week_content():
         with st.expander(f'bis zum: {str(current_week_info["Datum"])} –   {str(current_week_info["Thema"])}'):
             st.write('Erklärungen')
 
+
+#---------------------------------#
+#------ Main Page ----------------#
+#---------------------------------#  
+        
+dfSearchAll, df_weekly_chapters = importCourseDatasheet()
+
+st.subheader('Willkommen zur Einführung in Data Sciences & Python')
+st.write('*für Mineralogen, Kosmo-/Geochemiker, Petrologen & den ganzen Rest*')
+
+st.divider()
 display_week_content()
+st.divider()
 
 tab1, tab2, tab3 = st.tabs(['Lerneinheiten', 'Wochenübersicht', 'x'])
 
