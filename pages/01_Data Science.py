@@ -77,7 +77,7 @@ def display_week_content():
     # -----------------
     # current_date = datetime(day=16, month=5, year=2024)
     # -----------------
-    # current_week_index = df_weekly_dates.index[(df_weekly_dates['pd Datum'] >= current_date)]
+    current_week_index = df_weekly_dates.index[(df_weekly_dates['pd Datum'] >= current_date)]
     current_week_info = df_weekly_chapters.iloc[current_week_index.tolist()[0]]
 
     col1, col2 = st.columns([20,80])
