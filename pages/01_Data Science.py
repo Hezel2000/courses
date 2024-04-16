@@ -72,15 +72,6 @@ def useCourse(dfSearchAll):
         
 
 def display_week_content():
-    # df_weekly_dates = pd.DataFrame()
-    # df_weekly_dates['pd Datum'] = pd.to_datetime(df_weekly_chapters['Datum'])
-    # current_date = pd.to_datetime(datetime.now().date())
-    # # -----------------
-    # # current_date = datetime(day=16, month=5, year=2024)
-    # # -----------------
-    # current_week_index = df_weekly_dates.index[(df_weekly_dates['pd Datum'] >= current_date)]
-    # current_week_info = df_weekly_chapters.iloc[current_week_index.tolist()[0]]
-
     col1, col2 = st.columns([20,80])
     with col1:
         st.write('Überblick Woche:')
@@ -103,7 +94,7 @@ dfSearchAll, df_weekly_chapters = importCourseDatasheet()
 df_weekly_dates = pd.DataFrame()
 df_weekly_dates['pd Datum'] = pd.to_datetime(df_weekly_chapters['Datum'])
 current_date = pd.to_datetime(datetime.now().date())
-current_date = datetime(day=16, month=5, year=2024)
+# current_date = datetime(day=16, month=5, year=2024)
 current_week_index = df_weekly_dates.index[(df_weekly_dates['pd Datum'] >= current_date)]
 current_week_info = df_weekly_chapters.iloc[current_week_index.tolist()[0]]
 
