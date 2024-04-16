@@ -17,7 +17,7 @@ import pandas as pd
 
 
 
-st.title('wird gerade aktualisiert')
+st.title('wird derzeit aktualisiert')
 
 st.stop()
 
