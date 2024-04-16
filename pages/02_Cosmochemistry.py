@@ -1,7 +1,7 @@
 import streamlit as st
-from st_aggrid import AgGrid, GridUpdateMode
-from st_aggrid.grid_options_builder import GridOptionsBuilder
-from streamlit_player import st_player
+# from st_aggrid import AgGrid, GridUpdateMode
+# from st_aggrid.grid_options_builder import GridOptionsBuilder
+# from streamlit_player import st_player
 import pandas as pd
 
 # =============================================================================
@@ -14,6 +14,13 @@ import pandas as pd
 #             """
 # st.markdown(hide_st_style, unsafe_allow_html=True)
 # =============================================================================
+
+
+
+st.title('wird gerade aktualisiert')
+
+st.stop()
+
 
 cosmo_language = 'english'
 
@@ -127,5 +134,6 @@ with tab3:
     st.write(st.session_state.cosmo_glossary[st.session_state.cosmo_glossary['Term']==gloss_sel]['Explanation'].values[0])
     
 
+# sidebar
 st.sidebar.image('data_microanalysis/Goethe-Logo.jpg', width=150)
 st.sidebar.write("Viele Wege führen zum Erfolg.")

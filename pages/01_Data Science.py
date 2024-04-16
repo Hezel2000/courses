@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import streamlit as st
-from datetime import datetime
 import pandas as pd
+from utils import get_current_date, display_week_content
 
 # =============================================================================
 # hide_st_style = """
@@ -25,14 +25,17 @@ import pandas as pd
 def importCourseDatasheet():
     dfSearchAll= pd.read_csv('data_science/course_material_data_science.csv')
     dfSearchAll = dfSearchAll[dfSearchAll['ignore'] != 'yes']
-    df_weekly_chapters = pd.read_csv('data_science/weekly chapters.csv')
+    df_weekly_chapters = pd.read_csv('data_science/weekly chapters data science.csv')
     return dfSearchAll, df_weekly_chapters
 
 
-def useCourse(dfSearchAll):
+def useCourse(dfSearchAll, tmp):
     col1, col2 = st.columns((20,80))
     with col1:
-        chapter_sel = st.radio('Kapitelauswahl', dfSearchAll['Kapitel'].drop_duplicates(), index=current_week_index.tolist()[0]-1, horizontal = True)
+        if tmp == 1:
+            chapter_sel = st.radio('Kapitelauswahl', dfSearchAll['Kapitel'].drop_duplicates(), index=current_week_index.tolist()[0], horizontal = True)
+        else:
+            chapter_sel = st.radio('Kapitelauswahl', dfSearchAll['Kapitel'].drop_duplicates(), index=current_week_index.tolist()[0]-1, horizontal = True)
     with col2:
         dfSearchAll_tmp = dfSearchAll[dfSearchAll['Kapitel'] == chapter_sel]
         topic_sel = st.selectbox('Auswahl der Einheit', dfSearchAll_tmp['Titel'].tolist())
@@ -69,18 +72,7 @@ def useCourse(dfSearchAll):
                     st.write('keine vorhanden')
 
         st.write(sel_row['Beschreibung'])
-        
 
-def display_week_content():
-    col1, col2 = st.columns([20,80])
-    with col1:
-        st.write('Überblick Woche:')
-        week_nr = st.selectbox('', df_weekly_chapters['Woche'], index=current_week_index.tolist()[0], label_visibility='collapsed')
-        current_week_info = df_weekly_chapters.iloc[week_nr]
-    with col2:
-        st.write(f'Heute ist der: {current_date.strftime("%d.%m.%Y")}')
-        with st.expander(f'bis zum: {str(current_week_info["Datum"])} –   {str(current_week_info["Thema"])} – Gesamtlaufzeit: {str(current_week_info["Laufzeit"])}', expanded=True):
-            st.write(current_week_info["Beschreibung"])
 
 
 #---------------------------------#
@@ -88,35 +80,31 @@ def display_week_content():
 #---------------------------------#  
 
 # import course datasheets
-dfSearchAll, df_weekly_chapters = importCourseDatasheet()
+dfSearchAll, df_weekly_chapters_data_science = importCourseDatasheet()
 
-# Gett current dat info
-df_weekly_dates = pd.DataFrame()
-df_weekly_dates['pd Datum'] = pd.to_datetime(df_weekly_chapters['Datum'])
-current_date = pd.to_datetime(datetime.now().date())
-# current_date = datetime(day=16, month=5, year=2024)
-current_week_index = df_weekly_dates.index[(df_weekly_dates['pd Datum'] >= current_date)]
-current_week_info = df_weekly_chapters.iloc[current_week_index.tolist()[0]]
-
+# get date info
+current_date, current_week_index, current_week_info = get_current_date(df_weekly_chapters_data_science)
 
 # Start webpage content
 st.subheader('Willkommen zur Einführung in Data Sciences & Python')
 st.write('*für Mineralogen, Kosmo-/Geochemiker, Petrologen & den ganzen Rest*')
 
 st.divider()
-display_week_content()
+display_week_content(df_weekly_chapters_data_science, current_week_index, current_date)
 st.divider()
 
 tab1, tab2, tab3 = st.tabs(['Lerneinheiten', 'Wochenübersicht', 'Allgemeine Informationen'])
 
 with tab1:
-    if current_week_index.tolist()[0] >0:
-        useCourse(dfSearchAll)
+    if current_week_index.tolist()[0] > 0:
+        tmp = 0
+        useCourse(dfSearchAll, tmp)
     else:
-        st.write('Der Kurs startet in Kürze')
+        tmp = 1
+        useCourse(dfSearchAll, tmp)
 
 with tab2:
-    st.dataframe(df_weekly_chapters, width=800, hide_index=True)
+    st.dataframe(df_weekly_chapters_data_science, width=800, hide_index=True)
 
 with tab3:
     st.write("""**Wie zu schauen ist – oder zumindest: wie geschaut werden kann**
