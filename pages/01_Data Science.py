@@ -68,21 +68,21 @@ def useCourse(dfSearchAll, tmp):
                 # st.markdown(sel_row['Youtube'])
                 st.video(sel_row["Youtube"])
         with col2:
-            st.write("Laufzeit: " + sel_row["Laufzeit"])
+            st.write(f'Laufzeit: {sel_row["Laufzeit"]}')
             with st.expander("Jupyter Notebooks", expanded=True):
                 if sel_row["Lecture ipynb"] != "none":
                     vorlesung = (
-                        "[Vorlesung](jupyter_nb/" + sel_row["Lecture ipynb"] + ")"
+                        f'[Vorlesung](jupyter_nb/{sel_row["Lecture ipynb"]})'
                     )
                 else:
                     vorlesung = ""
                 if sel_row["Exercise ipynb"] != "none":
-                    uebungen = "[Übungen](jupyter_nb/" + sel_row["Exercise ipynb"] + ")"
+                    uebungen = f'[Übungen](jupyter_nb/{sel_row["Exercise ipynb"]})'
                 else:
                     uebungen = ""
                 if sel_row["Solution ipynb"] != "none":
                     loesungen = (
-                        "[Lösungen](jupyter_nb/" + sel_row["Solution ipynb"] + ")"
+                        f'[Lösungen](jupyter_nb/{sel_row["Solution ipynb"]})'
                     )
                 else:
                     loesungen = ""
