@@ -9,7 +9,6 @@ Woche,Datum,Thema,Laufzeit,Beschreibung
 Fun Fact Wir hier in Frankfurt sind an dieser Änderung recht zentral beteiligt."
 7,12.06.2024,Die vielen Möglichkeiten Diagramme zu erstellen,55:22,"In dieser letzten Einheit Daten darzustellen zeige ich – ansatzweise – wie vielfältig mit Jupyter Notebooks, bzw. Python geplottet werden kann, bzw. wie enorm flexibel interaktive Elemente genutzt werden können. Mit dem Package ›geopandas‹ lernen wir außerdem die Möglichkeit kennen, Daten auf Karten darzustellen – natürlich geht auch das interaktiv. Die Bedeutung guter, aussagekräftiger, übersichtlicher, und dabei durchaus komplexer Diagramme kann nicht ausreichend unterstrichen werden. Diagramme und Abbildungen bilden fast immer den Kern eines sehr guten papers, Vortrags oder natürlich einer Abschlussarbeit. Das gelingt jedoch nur mit dem entsprechenden Werkzeug. Matplotlib gehört sicherlich zu den besten Werkzeugen, um wissenschaftliche Diagramme und Abbildungen zu erzeugen. Die hohe Flexibilität interaktiver Elemente erlaubt es sehr schnell und übersichtlich Daten zusammen mit anderen Daten unterschiedlichster Quellen und beliebiger Menge zu visualisieren und analysieren. Das ist ein sehr guter, erster Schritt, um Daten zu verstehen, um dann in die Detail-Analyse zu gehen."
 8,19.06.2024,Digital Literacy,-,"Als Vorlesung, d.h., ohne Videos."
-9,26.06.2024,"statistics I – mw, stabw, stderr, gausskurve – Miguel",tbd,n/a
-10,03.07.2024,"statistics II – regression, tests, zählstatistik",tbd,n/a
-11,10.07.2024,statistic III/streamlit,tbd,n/a
-12,17.07.2024,statistic IV/streamlit,tbd,n/a
+9,26.06.2024,statistics I – mw, stabw, stderr, gausskurve,tbd,n/a
+10,03.07.2024,GitHub & Streamlit I – Einführung in interaktive Web-Tools,tbd,n/a
+11,10.07.2024, Streamlit II,tbd,n/a
