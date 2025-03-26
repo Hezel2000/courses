@@ -3,8 +3,6 @@ import pandas as pd
 
 st.subheader('Welcome')
 
-st.write('Über die Sidebar links erhälst Du Zugriff auf derzeit 3 verfügbare online-Kurse, Kosmochemie ist in Deutsch und Englisch verfügbar.')
-
 st.subheader("Einführungsvideo zur Verwendung des Data Science Kurses:")
 
 st.video("https://youtu.be/WR4dNNwPejc")
